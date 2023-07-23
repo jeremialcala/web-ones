@@ -86,13 +86,13 @@
             }
             @media (min-width: 576px) {
             .profile {
-                height: 80vw;
+                height: 78vw;
                 width: 80vw;
             }
             }
             @media (min-width: 768px) {
             .profile {
-                height: 80vw;
+                height: 78vw;
                 width: 80vw;
             }
             .col-md-7 {
@@ -103,7 +103,7 @@
 
             @media (min-width: 992px) {
             .profile {
-                height: 32vw;
+                height: 30vw;
                 width: 32vw;
             }
             .col-md-7 {
@@ -114,22 +114,9 @@
                 height: 45vw;
             }} 
             
-            @media (min-width: 992px) {
-            .profile {
-                height: 32vw;
-                width: 32vw;
-            }
-            .col-md-7 {
-                flex: 0 0 auto;
-                width: 59%;
-            }
-            .profile .profile-img {
-                height: 45vw;
-            }}
-
             @media (min-width: 1560px) {
             .profile {
-                height: 27vw;
+                height: 25vw;
                 width: 27vw;
             }
             .col-md-7 {
@@ -141,7 +128,7 @@
             }} 
             @media (min-width: 1960px) {
             .profile {
-                height: 25vw;
+                height: 23vw;
                 width: 25vw;
             }
             .col-md-7 {
@@ -153,7 +140,7 @@
             }} 
             @media (min-width: 2130px) {
             .profile {
-                height: 24vw;
+                height: 22vw;
                 width: 24vw;
             }
             .col-md-7 {
@@ -166,7 +153,7 @@
             
             @media (min-width: 2215px) {
             .profile {
-                height: 22vw;
+                height: 20vw;
                 width: 22vw;
             }
             .col-md-7 {
@@ -343,6 +330,7 @@ With our expertise in iOS and Android app development, we ensure seamless integr
                 </div>
 
             </div>
+
             <!--MODAL DESIGN-->
             <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -427,18 +415,6 @@ With our expertise in iOS and Android app development, we ensure seamless integr
             })
         })(jQuery);
 
-        (function($) {
-            'use strict';
-            $('#exampleModal-4').on('show.bs.modal', function(event) {
-                var button = $(event.relatedTarget) // Button that triggered the modal
-                var recipient = button.data('whatever') // Extract info from data-* attributes
-                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-                var modal = $(this)
-                modal.find('.modal-title').text('New message to ' + recipient)
-                modal.find('.modal-body input').val(recipient)
-            })
-        })(jQuery);
     </script>
     <script>
         $(function() {
@@ -466,8 +442,7 @@ With our expertise in iOS and Android app development, we ensure seamless integr
                 ];
                 setTimeout(function() {   
                     generate_button_message(msg, buttons);  
-                }, 1000)
-                
+                }, 1000)                
             })
             
             function generate_message(msg, type) {
@@ -478,10 +453,10 @@ With our expertise in iOS and Android app development, we ensure seamless integr
                 str += "            <img src=\"img\/webones_logo_letters.png\">";
                 /*str += "            <img src=\"img\/chatbot_head.png\">";*/
                 str += "          <\/span>";
-                str += "          <div class=\"cm-msg-text\">";
+                str += "      <div class=\"cm-msg-text\">";
                 str += msg;
-                str += "          <\/div>";
-                str += "        <\/div>";
+                str += "     <\/div>";
+                str += " <\/div>";
                 $(".chat-logs").append(str);
                 $("#cm-msg-"+INDEX).hide().fadeIn(300);
                 if(type == 'self'){
@@ -497,6 +472,7 @@ With our expertise in iOS and Android app development, we ensure seamless integr
                 var btn_obj = buttons.map(function(button) {
                 return  "              <li class=\"button\"><a href=\"javascript:;\" data-toggle=\"modal\" data-target=\"#exampleModal-4\"  data-whatever=\"@mdo\"class=\"btn btn-primary chat-btn\" chat-value=\""+button.value+"\">"+button.name+"<\/a><\/li>";
                 }).join('');
+
                 var str="";
                 str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg user\">";
                 str += "          <span class=\"msg-avatar\">";
