@@ -408,12 +408,25 @@ With our expertise in iOS and Android app development, we ensure seamless integr
             </div>
         </footer>
     </body>
-    <!--script src="js/vendor.bundle.base.js"></script-->
+    <script src="js/vendor.bundle.base.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
     <script>
+        (function($) {
+            'use strict';
+            $('#exampleModal-4').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget) // Button that triggered the modal
+                var recipient = button.data('whatever') // Extract info from data-* attributes
+                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+                var modal = $(this)
+                modal.find('.modal-title').text('New message to ' + recipient)
+                modal.find('.modal-body input').val(recipient)
+            })
+        })(jQuery);
+
         (function($) {
             'use strict';
             $('#exampleModal-4').on('show.bs.modal', function(event) {
@@ -476,11 +489,13 @@ With our expertise in iOS and Android app development, we ensure seamless integr
                 }    
                 $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
             }  
-            
+            /*
+            data-toggle="modal" data-target="#exampleModal-4" data-whatever="@mdo"
+            */
             function generate_button_message(msg, buttons){ 
                 INDEX++;
                 var btn_obj = buttons.map(function(button) {
-                return  "              <li class=\"button\"><a href=\"javascript:;\" class=\"btn btn-primary chat-btn\" chat-value=\""+button.value+"\">"+button.name+"<\/a><\/li>";
+                return  "              <li class=\"button\"><a href=\"javascript:;\" data-toggle=\"modal\" data-target=\"#exampleModal-4\"  data-whatever=\"@mdo\"class=\"btn btn-primary chat-btn\" chat-value=\""+button.value+"\">"+button.name+"<\/a><\/li>";
                 }).join('');
                 var str="";
                 str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg user\">";
