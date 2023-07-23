@@ -429,7 +429,10 @@ With our expertise in iOS and Android app development, we ensure seamless integr
     </script>
     <script>
         $(function() {
+            /*
+            https:\/\/via.placeholder.com\/248x248\
 
+            */
             var INDEX = 0; 
             $("#chat-submit").click(function(e) {
                 e.preventDefault();
@@ -448,8 +451,8 @@ With our expertise in iOS and Android app development, we ensure seamless integr
                     value: 'new'
                     }
                 ];
-                setTimeout(function() {      
-                generate_message(msg, 'user');  
+                setTimeout(function() {   
+                    generate_button_message(msg, buttons);  
                 }, 1000)
                 
             })
@@ -459,7 +462,8 @@ With our expertise in iOS and Android app development, we ensure seamless integr
                 var str="";
                 str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
                 str += "          <span class=\"msg-avatar\">";
-                str += "            <img src=\"https:\/\/via.placeholder.com\/248x248\">";
+                str += "            <img src=\"img\/webones_logo_letters.png\">";
+                /*str += "            <img src=\"img\/chatbot_head.png\">";*/
                 str += "          <\/span>";
                 str += "          <div class=\"cm-msg-text\">";
                 str += msg;
@@ -473,25 +477,7 @@ With our expertise in iOS and Android app development, we ensure seamless integr
                 $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
             }  
             
-            function generate_button_message(msg, buttons){    
-                /* Buttons should be object array 
-                [
-                    {
-                    name: 'Existing User',
-                    value: 'existing'
-                    },
-                    {
-                    name: 'New User',
-                    value: 'new'
-                    }
-                ]
-                */
-                /*
-                https://via.placeholder.com/248x248
-                https:\/\/via.placeholder.com\/248x248
-                https://image.flaticon.com/icons/svg/145/145867.svg
-                https://image.crisp.im/avatar/operator/196af8cc-f6ad-4ef7-afd1-c45d5231387c/240/?1483361727745 
-                */
+            function generate_button_message(msg, buttons){ 
                 INDEX++;
                 var btn_obj = buttons.map(function(button) {
                 return  "              <li class=\"button\"><a href=\"javascript:;\" class=\"btn btn-primary chat-btn\" chat-value=\""+button.value+"\">"+button.name+"<\/a><\/li>";
@@ -499,7 +485,7 @@ With our expertise in iOS and Android app development, we ensure seamless integr
                 var str="";
                 str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg user\">";
                 str += "          <span class=\"msg-avatar\">";
-                str += "            <img src=\"https:\/\/via.placeholder.com\/248x248\">";
+                str += "            <img src=\"img\/chatbot_head.png\">";
                 str += "          <\/span>";
                 str += "          <div class=\"cm-msg-text\">";
                 str += msg;
