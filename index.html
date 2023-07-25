@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Web-Ones... from 0 to web3!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- boostrap and fontawsome-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />     
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+        <script src="scripts/color-modes.js"></script> 
+        
+        <link rel="stylesheet" href="ccs/style.css">
+        <link rel="stylesheet" href="ccs/chat.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+
+        <style>                      
+            .bd-mode-toggle {
+                z-index: 1500;
+            }
+
+            .carusel-font {               
+                margin-top: 0;
+                margin-bottom: .5rem;
+                font-weight: 500;
+                line-height: 1.2;
+                color: var(--bs-heading-color);
+                text-shadow: 2px 2px #6c757d;
+            }
+
+            .embeded-image {
+                background-image:url("img/app-dev-bgr.png");
+                background-repeat: no-repeat;
+                color:azure;
+                background-size: cover;
+            }
+            .main-post{
+                height: 440px;
+            }
+            .products {
+                text-align: center;
+            }
+            .gallery-image{
+                background-size: cover;
+            }
+            .featurette-heading {
+                margin-top: 2rem;
+                font-size: 50px;
+            }
+            .bg-gradient-primary-to-secondary {
+                /*border-radius: 5vm;*/
+                background: #1e30f3;
+                background: linear-gradient(135deg, #182652 0%, #adb5bd 100%);
+            }
+            .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+                --bs-gutter-x: 1.5rem;
+                --bs-gutter-y: 0;
+                width: 100%;
+                padding: calc(var(--bs-gutter-x) * .5);
+
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .container-navbar {
+                --bs-gutter-x: 1.5rem;
+                --bs-gutter-y: 0;
+                width: 100%;
+                padding: calc(var(--bs-gutter-x) * .1);
+
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .profile {
+                position: relative;
+                /*height: 75vw;
+                width: 75vw;*/
+                border-radius: 5vw;
+                
+                max-height: 40rem;
+                max-width: 40rem;
+            }
+            @media (min-width: 576px) {
+            .profile {
+                height: 78vw;
+                width: 80vw;
+            }
+            }
+            @media (min-width: 768px) {
+            .profile {
+                height: 78vw;
+                width: 80vw;
+            }
+            .col-md-7 {
+                flex: 0 0 auto;
+                width: 90%;
+            }
+            }
+
+            @media (min-width: 992px) {
+            .profile {
+                height: 30vw;
+                width: 32vw;
+            }
+            .col-md-7 {
+                flex: 0 0 auto;
+                width: 59%;
+            }
+            .profile .profile-img {
+                height: 45vw;
+            }} 
+            
+            @media (min-width: 1560px) {
+            .profile {
+                height: 25vw;
+                width: 27vw;
+            }
+            .col-md-7 {
+                flex: 0 0 auto;
+                width: 59%;
+            }
+            .profile .profile-img {
+                height: 45vw;
+            }} 
+            @media (min-width: 1960px) {
+            .profile {
+                height: 23vw;
+                width: 25vw;
+            }
+            .col-md-7 {
+                flex: 0 0 auto;
+                width: 59%;
+            }
+            .profile .profile-img {
+                height: 45vw;
+            }} 
+            @media (min-width: 2130px) {
+            .profile {
+                height: 22vw;
+                width: 24vw;
+            }
+            .col-md-7 {
+                flex: 0 0 auto;
+                width: 59%;
+            }
+            .profile .profile-img {
+                height: 45vw;
+            }}
+            
+            @media (min-width: 2215px) {
+            .profile {
+                height: 20vw;
+                width: 22vw;
+            }
+            .col-md-7 {
+                flex: 0 0 auto;
+                width: 59%;
+            }
+            .profile .profile-img {
+                height: 45vw;
+            }}
+            
+            @media (min-width: 2415px) {
+            .profile {
+                height: 21vw;
+                width: 21vw;
+            }
+            .col-md-7 {
+                flex: 0 0 auto;
+                width: 59%;
+            }
+            .profile .profile-img {
+                height: 45vw;
+            }}
+
+            @media (min-width: 2415px) {
+            .profile {
+                height: 21vw;
+                width: 21vw;
+            }
+            .col-md-7 {
+                flex: 0 0 auto;
+                width: 59%;
+            }
+            .profile .profile-img {
+                height: 45vw;
+            }}
+
+        </style>
+   
+    </head>
+    <body>        
+        <!-- Main container for content-->
+        <main class="container">
+
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="check2" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+                </symbol>
+                <symbol id="circle-half" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                </symbol>
+                <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+                    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+                </symbol>
+                <symbol id="sun-fill" viewBox="0 0 16 16">
+                    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+                </symbol>
+            </svg>
+
+            <div class="dropdown position-fixed top-1 end-0 mb-3 me-3 bd-mode-toggle">
+                <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+                    <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                    <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text" style="">
+                    <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+                            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                            Light
+                            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+                            Dark
+                            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                            Auto
+                            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Creating the navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Eighth navbar example">
+                <div class="container container-navbar">                    
+                    <a class="navbar-brand" href="#">
+                        <img class="navbar-brand" href="#" src="img/web-ones-logo.png" height="60" data-src="img/web-ones-logo.png" alt="image" style="opacity: 1;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarsExample07">
+
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </nav>
+
+            <!--This is the feature product-->
+            <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary" id="main-feature">
+                <div class="p-4 p-md-5 mb-4 embeded-image main-post">     
+                    <h1 class="fst-italic">Wellcome to Web-Ones</h1>
+                    <p class="lead my-3">Your best bet to integrate technologies from web to web3</p>
+                    <p>
+                        <a href="#" class="btn btn-primary my-2">View demos</a>
+                        <a href="#" class="btn btn-secondary my-2">Contact US</a>
+                      </p>
+                    <!--p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p-->
+                </div>
+            </div>
+            
+            <!--Here we put products and services-->
+            <div class="container" id="products">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-4 products">                        
+                        <img src="img/chatbot-start.png" data-src="img/chatbot-start.png" height="140" width="140" alt="image" style="opacity: 1;">
+                        <h2 class="fw-normal">Chatbots & Automations</h2>
+                        <p>Free the power of automation to enhance customer satisfaction, with our advanced chatbot technology, you can automate customer interactions, increase operational efficiency, and scale your business to new heights, we can help you through your process to reach your goals</p>
+                        <p><a class="btn btn-secondary" id="chat-button">Chat with Pops »</a></p-->
+                    </div>
+
+                    <div class="col-lg-4 products">
+                        <img src="img/web-product.png" data-src="img/web-product.png" height="140" width="140" alt="image" style="opacity: 1;">
+                        <h2 class="fw-normal">Web applications</h2>
+                        <p>With our web applications, you can unlock new opportunities, streamline business processes, and connect with your customers in a meaningful way. 
+
+businesses to build robust and dynamic online solutions helping you to connect to your actual services  from e-commerce platforms and content management systems to customized enterprise solutions, our expert team crafts intuitive interfaces, robust back-end systems, and secure architectures.</p>
+                        <!--p><a class="btn btn-secondary" href="#">View details »</a></p-->
+                    </div>
+
+                    <div class="col-lg-4 products">
+                        <img src="img/mobile-apps.png" data-src="img/mobile-apps.png" height="140" width="140" alt="image" style="opacity: 1;">
+                        <h2 class="fw-normal">IOS & Android</h2>
+                        <p>Our iOS & Android development service brings your mobile app ideas to life. 
+With our expertise in iOS and Android app development, we ensure seamless integration with platform-specific functionalities we walked you from concept to deployment, we guide you through every step of the process, taking care of design, development, testing, and optimization. Whether you need a consumer-facing app, an enterprise solution, or a game-changing innovation and connect with your target audience.</p>
+                        <!--p><a class="btn btn-secondary" href="#">View details »</a></p-->
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal-4" data-whatever="@mdo">Open modal for @mdo</button>
+                    </div>
+
+                </div>
+            </div>
+
+            
+            <div class="container" id="galery">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h2 class="featurette-heading fw-normal lh-1">Our solutions will help you grow. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
+                        <p class="lead">We are working on different industries and projects. We have a diverse and promising skill set. Able to effectively self-manage during independent projects and collaborate as part of a productive team.</p>
+                    </div>
+
+                    <div class="col-md-5 profile bg-gradient-primary-to-secondary">
+                        <img src="img/Jeremi Alcala-AI-Headshot.png" data-src="img/Jeremi Alcala-AI-Headshot.png" height="100%" width="100%" alt="image" style="opacity: 1;">
+                        
+                    </div>  
+                </div>
+
+            </div>
+
+            <!--MODAL DESIGN-->
+            <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">New message to @mdo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">Message:</label>
+                                    <textarea class="form-control" id="message-text"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success">Send message</button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="chat-circle" class="btn btn-raised">
+                <div id="chat-overlay"></div>
+                <i class="material-icons">speaker_phone</i>
+            </div>
+        
+            <div class="chat-box">
+                <div class="chat-box-header">
+                    Chatbot "Pops"
+                    <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+                </div>
+                
+                <div class="chat-box-body">
+                    <div class="chat-box-overlay"></div>
+                    <div class="chat-logs"></div><!--chat-log -->
+                </div>
+                
+                <div class="chat-input">      
+                    <form>
+                        <input type="text" id="chat-input" placeholder="Send a message..."/>
+                        <button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons">send</i></button>
+                    </form>      
+                </div>
+            </div>
+            
+
+        </main>
+        <footer class="container py-5">
+            <div class="row">
+                <div class="col-12 col-md">                    
+                    <small class="d-block mb-3 text-body-secondary">© 2023 Web-Ones</small>
+                </div>
+                
+            </div>
+        </footer>
+    </body>
+
+    <script src="js/vendor.bundle.base.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <script>
+        (function($) {
+            'use strict';
+            $('#exampleModal-4').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget) // Button that triggered the modal
+                var recipient = button.data('whatever') // Extract info from data-* attributes
+                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+                var modal = $(this)
+                modal.find('.modal-title').text('New message to ' + recipient)
+                modal.find('.modal-body input').val(recipient)
+            })
+        })(jQuery);
+
+    </script>
+    <script>
+        $(function() {
+            /*
+            https:\/\/via.placeholder.com\/248x248\
+
+            */
+            var INDEX = 0; 
+            $("#chat-submit").click(function(e) {
+                e.preventDefault();
+                var msg = $("#chat-input").val(); 
+                if(msg.trim() == ''){
+                return false;
+                }
+                generate_message(msg, 'self');
+                var buttons = [
+                    {
+                    name: 'Existing User',
+                    value: 'existing'
+                    },
+                    {
+                    name: 'New User',
+                    value: 'new'
+                    }
+                ];
+                setTimeout(function() {   
+                    generate_button_message(msg, buttons);  
+                }, 1000)                
+            })
+            
+            function generate_message(msg, type) {
+                INDEX++;
+                var str="";
+                str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
+                str += "          <span class=\"msg-avatar\">";
+                str += "            <img src=\"img\/webones_logo_letters.png\">";
+                /*str += "            <img src=\"img\/chatbot_head.png\">";*/
+                str += "          <\/span>";
+                str += "      <div class=\"cm-msg-text\">";
+                str += msg;
+                str += "     <\/div>";
+                str += " <\/div>";
+                $(".chat-logs").append(str);
+                $("#cm-msg-"+INDEX).hide().fadeIn(300);
+                if(type == 'self'){
+                $("#chat-input").val(''); 
+                }    
+                $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
+            }  
+            /*
+            data-toggle="modal" data-target="#exampleModal-4" data-whatever="@mdo"
+            */
+            function generate_button_message(msg, buttons){ 
+                INDEX++;
+                var btn_obj = buttons.map(function(button) {
+                return  "              <li class=\"button\"><a href=\"javascript:;\" data-toggle=\"modal\" data-target=\"#exampleModal-4\"  data-whatever=\"@mdo\"class=\"btn btn-primary chat-btn\" chat-value=\""+button.value+"\">"+button.name+"<\/a><\/li>";
+                }).join('');
+
+                var str="";
+                str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg user\">";
+                str += "          <span class=\"msg-avatar\">";
+                str += "            <img src=\"img\/chatbot_head.png\">";
+                str += "          <\/span>";
+                str += "          <div class=\"cm-msg-text\">";
+                str += msg;
+                str += "          <\/div>";
+                str += "          <div class=\"cm-msg-button\">";
+                str += "            <ul>";   
+                str += btn_obj;
+                str += "            <\/ul>";
+                str += "          <\/div>";
+                str += "        <\/div>";
+                $(".chat-logs").append(str);
+                $("#cm-msg-"+INDEX).hide().fadeIn(300);   
+                $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
+                $("#chat-input").attr("disabled", true);
+            }
+
+
+            $(document).delegate(".chat-btn", "click", function() {
+                var value = $(this).attr("chat-value");
+                var name = $(this).html();
+                $("#chat-input").attr("disabled", false);
+                generate_message(name, 'self');
+            })
+
+            $("#chat-circle").click(function() {    
+                $("#chat-circle").toggle('scale');
+                $(".chat-box").toggle('scale');
+            })
+
+            $("#chat-button").click(function() {    
+                $("#chat-circle").toggle('scale');
+                $(".chat-box").toggle('scale');
+            })
+
+            $(".chat-box-toggle").click(function() {
+                $("#chat-circle").toggle('scale');
+                $(".chat-box").toggle('scale');
+            })
+        })
+    </script>
+</html>
